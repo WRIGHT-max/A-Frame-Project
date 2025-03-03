@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A-Frame House</title>
+    <script src="Script/aframe.js"></script>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <img src="Photo/uniqueFloor.jpeg" alt="" id="Floor">
+            <img src="Photo/sky.jpeg" alt="" id="Sky">
+            <img src="Photo/UniqueWall.jpeg" alt="" id="WallTexture">
+            <img src="Photo/uniqueFloor.jpeg" alt="" id="WallTexture1">
+            <img src="Photo/RoofTexture.jpeg" alt="" id="RoofTexture">
+            <img src="Photo/Door.jpeg" alt="" id="Door">
+            <img src="Photo/uniqueFloor.jpeg" alt="" id="Bars">
+            <img src="Photo/WindowTexture.jpeg" alt="" id="WindowTexture">
+            <img src="Photo/Television.jpeg" alt="" id="Television">
+            <img src="Photo/nido.jpeg" alt="" id="nido">
+            <img src="Photo/Milo.jpeg" alt="" id="Milo">
+            <img src="Photo/cup.jpeg" alt="" id="cup">
+            <img src="Photo/WINE.avif" alt="" id="Wine1">
+            <img src="Photo/Wine1.jpeg" alt="" id="WINE">
+            <img src="Photo/medium.webp" alt="" id="Wine2">
+            <img src="Photo/download.jpeg" alt="" id="Wine3">
+            <img src="Photo/OIP (10).jpeg" alt="" id="6">
+            <img src="Photo/Hennessy-XO-Cognac-NBA-Limited-Edition-750ML-BTL.jpg" alt="" id="Wine4">
+            <img src="Photo/uniqueFloor.jpeg" alt="" id="cup1">
+            <img src="Photo/uniqueFloor.jpeg" alt="" id="cup2">
+
+        </a-assets>
+
+        <!-- Lighting -->
+        <a-light type="ambient" color="#BBB"></a-light>
+        <a-light type="directional" position="2 4 2" intensity="0.8" cast-shadow></a-light>
+
+        <!-- Background -->
+        <a-sky src="#Sky"></a-sky>
+        <a-plane color="green" src="#Floor" normal-map="#Floor" normal-texture-repeat="5 5" repeat="5 5" rotation="-90 0 0" scale="1000 1000 1"></a-plane>
+        <a-plane color="black" src="#Floor1" normal-map="#Floor" normal-texture-repeat="5 5" repeat="5 5" rotation="-90 0 0" position="0 0.02 0" scale="10 10 1"></a-plane>
+        
+
+        <!-- Walls -->
+        <a-box position="0 1.5 -5" width="10" height="3" depth="0.1" src="#WallTexture">
+          <a-box position="0 0 .01" width="2" height="1" depth="0.1" src="#Television"></a-box>
+          <a-box position="4 -0.5 0.3" width="2" height="0.05" depth="0.5" src="#Bars"></a-box>
+          <a-box position="4 -0.3 0.2" width="0.25" height="0.3" depth="0.2" src="#Wine2"></a-box>
+          <a-box position="3.3 -0.3 0.2" width="0.25" height="0.3" depth="0.2" src="#WINE"></a-box>
+          <a-box position="3.7 -0.3 0.2" width="0.25" height="0.3" depth="0.2" src="#Wine3"></a-box>
+          <a-box position="4.5 -0.3 0.2" width="0.25" height="0.3" depth="0.2" src="#Wine4"></a-box>
+        </a-box> <!-- Back Wall -->
+        <a-box position="5 1.5 0" width="0.1" height="3" depth="10" src="#WallTexture"></a-box> <!-- Right Wall -->
+        <a-box position="-5 1.5 0" width="0.1" height="3" depth="10" src="#WallTexture"></a-box> <!-- Left Wall -->
+        
+        <!-- Front Wall with Door Gap -->
+        <a-box position="1 1.5 5" width="0.2" height="3" depth="0.09" src="#WallTexture1"></a-box> <!-- Left Side of Front Wall -->
+        <a-box position="-1 1.5 5" width="0.2" height="3" depth="0.09" src="#WallTexture1"></a-box> <!-- Right Side of Door Gap -->
+        <a-box position="-3 1.5 5" width="4.1" height="3" depth="0.1" src="#WallTexture"></a-box> <!-- Left Side of Front Wall -->
+        <a-box position="3 1.5 5" width="4.1" height="3" depth="0.1" src="#WallTexture"></a-box> <!-- Right Side of Front Wall -->
+
+        <!-- Roof -->
+        <a-box position="0 3.05 0" width="10" height="0.1" depth="10" src="#RoofTexture"></a-box>
+        
+        <!-- Door (Perfectly Fitted) -->
+        <a-box position="0 1.5 5" width="2" height="3" depth="0.05" src="#Door"></a-box>
+
+        <!-- Windows -->
+        <a-box position="-5 1.5 0" width="0.11" height="1.2" depth="1" src="#WindowTexture"></a-box> <!-- Left Side Window -->
+        <a-box position="5 1.5 0" width="0.11" height="1.2" depth="1" src="#WindowTexture"></a-box> <!-- Right Side Window -->
+
+        <!-- Prison Cage (Vertical Bars) -->
+      <a-cylinder position="6.5 1 1.5" radius="0.05" height="3" color="gray"></a-cylinder>
+      <a-cylinder position="6.5 1 -1.5" radius="0.05" height="3" color="gray"></a-cylinder>
+      
+      <!-- Prison Cage (Horizontal Bars) -->
+      <a-box position="6.5 2.5 0" width="3.2" height="0.1" depth="3.2" color="gray"></a-box>
+
+      <!-- Prison Cage (Vertical Bars) -->
+      <a-cylinder position="-7 1 1.5" radius="0.05" height="3" color="gray"></a-cylinder>
+      <a-cylinder position="-7 1 -1.5" radius="0.05" height="3" color="gray"></a-cylinder>
+      
+      <!-- Prison Cage (Horizontal Bars) -->
+      <a-box position="-6.5 2.5 0" width="3.2" height="0.1" depth="3.2" color="gray"></a-box>
+      
+       <!-- Table (Shifted to a New Position) -->
+       <a-cylinder position="0.5 0.75 0.5" radius="1" height="0.1" src="#cup1" shadow></a-cylinder>
+       <a-cylinder position="0.5 0.4 0.5" radius="0.15" height="0.8" src="#cup1" shadow></a-cylinder>
+ 
+     <!-- Chairs (Further Away) -->
+       <a-box position="2 0.5 0.5" width="0.5" height="0.8" depth="0.5" src="#cup2" shadow></a-box>
+       <a-box position="-1 0.5 0.5" width="0.5" height="0.8" depth="0.5" src="#cup2" shadow></a-box>
+ 
+       <!-- Milo Tin -->
+       <a-cylinder position="0.8 0.85 0.5" radius="0.15" height="0.3" src="#nido" shadow></a-cylinder>
+ 
+       <!-- Milk Tin -->
+       <a-cylinder position="0.3 0.85 0.5" radius="0.15" height="0.3" src="#Milo" shadow></a-cylinder>
+ 
+       <!-- Cups (Moved for Different Placement) -->
+       <a-box position="0.65 0.9 1"  height="0.1" width="0.5" depth="0.5" src="#cup"></a-box>
+     
+ 
+       </a-scene>
+</body>
+</html>
